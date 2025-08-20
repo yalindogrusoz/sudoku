@@ -18,8 +18,8 @@ and the cage will be removed
 
 After each cage addition, the updated grid is shown with color-coded grids and a legend to show each color grid (along with a cell's coordinates in case there are multiple of the same color) and its target sum.
 
-![alt text](<Screenshot 2025-08-20 at 14.46.26.png>)
+![alt text](<CageAddition.png>)
 
 After all cages are added, type "done" and the algorithm will run. A result is shown below for a Killer Sudoku with 6 solutions.
 
-![alt text](<Screenshot 2025-08-20 at 11.23.02.png>)
+![alt text](<SampleResult.png>)
