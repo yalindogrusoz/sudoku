@@ -41,10 +41,8 @@ public class DLX {
         stopAfterFirst = b;
     }
 
-    // --- ADD: cap on number of solutions we will collect ---
     private int maxSolutions = Integer.MAX_VALUE;
     public void setMaxSolutions(int k) { maxSolutions = (k <= 0) ? 1 : k; }
-    // -------------------------------------------------------
 
     // Build header row with the given column names (left-to-right circular list).
     public DLX(String[] colNames) {
@@ -142,9 +140,7 @@ public class DLX {
 
     // Core recursive search
     private void search() {
-        // --- ADD: stop early if we've already collected enough solutions ---
         if (solutions.size() >= maxSolutions) return;
-        // -------------------------------------------------------------------
 
         // If header row is empty (meaning that all columns are covered and hence removed) solution found.
         if (head.R == head) {

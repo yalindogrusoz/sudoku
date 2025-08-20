@@ -28,26 +28,26 @@ public class Main {
         return "" + col + r;
     }
 
-    // one-line coordinate + usage intro (printed once at start)
-    // one-line coordinate + usage intro (printed once at start)
-private static boolean printIntro(Scanner sc) {
-    System.out.println("Coordinates guide:");
-    System.out.println("  LETTER = column (A..I), NUMBER = row (1..9). Example: B7  => row 7, column 2");
-    System.out.println("Undo tip:");
-    System.out.println("  Type 'delete <cells>' anytime to undo a cage. Example: delete A1A2A3 (spaces/commas also fine)");
-    System.out.println("Givens tip:");
-    System.out.println("  Use a 1-cell cage to fix a digit. Example: cells 'A1' with sum '5' means A1=5.");
-    System.out.println("Do you want all solutions, or one? Caution: if a very sparsely filled puzzle without a lot of clues is given, requesting all solutions might be problematic.");
-    System.out.println("Type either 'all' or 'one'");
+    //instructions
+    private static boolean printIntro(Scanner sc) 
+    {
+        System.out.println("Coordinates guide:");
+        System.out.println("  LETTER = column (A..I), NUMBER = row (1..9). Example: B7  => row 7, column 2");
+        System.out.println("Undo tip:");
+        System.out.println("  Type 'delete <cells>' anytime to undo a cage. Example: delete A1A2A3 (spaces/commas also fine)");
+        System.out.println("Givens tip:");
+        System.out.println("  Use a 1-cell cage to fix a digit. Example: cells 'A1' with sum '5' means A1=5.");
+        System.out.println("Do you want all solutions, or one? Caution: if a very sparsely filled puzzle without a lot of clues is given, requesting all solutions might be problematic.");
+        System.out.println("Type either 'all' or 'one'");
 
-    String ans;
-    do {
-        ans = sc.nextLine().trim().toLowerCase();
-    } while (!ans.equals("all") && !ans.equals("one"));
+        String ans;
+        do {
+            ans = sc.nextLine().trim().toLowerCase();
+        } while (!ans.equals("all") && !ans.equals("one"));
 
-    System.out.println();
-    return ans.equals("all"); // true ⇒ want all solutions
-}
+        System.out.println();
+        return ans.equals("all"); // true ⇒ want all solutions
+    }
 
     // add one cage to the puzzle using a coordinate string like "A1 A2 B1"
     private static void addCage(Puzzle p, String coordLine, int sum) {
@@ -58,14 +58,13 @@ private static boolean printIntro(Scanner sc) {
         p.addCage(new Cage(rows, cols, sum));
     }
 
-    // internal lightweight representation while editing
     private static class CageDef {
         final ArrayList<Cell> cells;
         final int sum;
         CageDef(ArrayList<Cell> cells, int sum) { this.cells = cells; this.sum = sum; }
     }
 
-    // build a temporary Puzzle from current cage defs (used to render after each change)
+    // build a Puzzle from current cage
     private static Puzzle buildPuzzleFromDefs(List<CageDef> defs) {
         Puzzle temp = new Puzzle();
         for (CageDef d : defs) {
@@ -76,7 +75,6 @@ private static boolean printIntro(Scanner sc) {
         return temp;
     }
 
-    // canonical key for a set of cells (order-insensitive) to match deletes
     private static String keyForCells(ArrayList<Cell> cells) {
         int[] keys = new int[cells.size()];
         for (int i = 0; i < cells.size(); i++) {
