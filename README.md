@@ -1,6 +1,10 @@
 # Killer Sudoku Solver with DLX
 
-Instructions:
+This repository is a project under Pioneer Academics, mentored by Prof. Carl Yerger, within the field of Combinatorics and Graph Theory. Knuth's Algorithm X, which efficiently solves the Exact Cover Problem using his data structure DLX (a 2D-doubly-linked-list), was adapted to Killer Sudoku for its efficient soltution.
+Details of the work can be accessed [here]().
+
+## Execution Instructions
+This implementation is done using Java.
 After running, you will be asked to choose if you want one or all solutions
 Typing "one" will print only the first solution found, if any
 Typing "all" will print at most 10 solutions--no more is printed as excessive memory usage is prevented.
@@ -18,6 +22,7 @@ and the cage will be removed
 
 After each cage addition, the updated grid is shown with color-coded grids and a legend to show each color grid (along with a cell's coordinates in case there are multiple of the same color) and its target sum.
 
+### Sample Run
 ![alt text](<CageAddition.png>)
 
 After all cages are added, type "done" and the algorithm will run. A result is shown below for a Killer Sudoku with 6 solutions.
