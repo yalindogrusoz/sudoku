@@ -1,6 +1,6 @@
 # Killer Sudoku Solver with DLX
 
-This repository is a project under Pioneer Academics, mentored by Prof. Carl Yerger, within the field of Combinatorics and Graph Theory. Knuth's Algorithm X, which efficiently solves the Exact Cover Problem using his data structure DLX (a 2D-doubly-linked-list), was adapted to Killer Sudoku for its efficient soltution.
+This repository is a project under Pioneer Academics (https://pioneeracademics.com/), mentored by Prof. Carl Yerger (https://www.davidson.edu/people/carl-yerger), within the field of Combinatorics and Graph Theory. Knuth's Algorithm X (https://arxiv.org/abs/cs/0011047), which efficiently solves the Exact Cover Problem using his data structure DLX (a 2D-doubly-linked-list), was adapted to Killer Sudoku for its efficient soltution.
 Details of the work can be accessed [here]().
 
 ## Execution Instructions
